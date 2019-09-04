@@ -1,0 +1,21 @@
+# dev
+START_COMMAND=nodemon -L run start
+# prod
+# START_COMMAND=forever -c 'node --harmony' ./app.js --minUptime 1000 --spinSleepTime 1000
+
+APP_NAME=docker-express
+NODE_ENV=development
+SECRET_KEY=smells like cat spirit
+PORT=8000
+HOST=0.0.0.0
+DB_NAME=appdb
+
+MONGO_PORT=27017
+MONGO_ROOT_USER=mongoadmin
+MONGO_ROOT_PASSWORD=changeme
+
+MONGOEX_ADMIN_ENABLED=true
+MONGOEX_READONLY=false
+MONGOEX_PORT=8081
+
+NGINX_PROXY_PORT=80

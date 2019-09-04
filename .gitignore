@@ -1,0 +1,6 @@
+node_modules
+.env
+.idea/
+mongodata/
+views/react/.cache
+access.log

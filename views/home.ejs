@@ -1,0 +1,20 @@
+<% include includes/head.ejs %>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <h2>home page</h2>
+            <h4 class="text-light"><%= appName %> </h4>
+            <p class="text-secondary"><%= author %> &copy; <%= year %></p>
+            <% if(user){ %>
+                <p class="text-secondary">hi <span class="text-white"><%= user.email %></span> visit your <a
+                            href="/profile">profile page</a> or <a
+                            href="/logout">logout &raquo;</a></p>
+            <% }else{ %>
+                <p><a href="/login">login &raquo;</a> <span class="text-light">or</span> <a href="/register">register
+                        &raquo;</a>
+                </p>
+            <% } %>
+        </div>
+    </div>
+</div>
+<% include includes/footer.ejs %>

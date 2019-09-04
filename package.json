@@ -1,0 +1,49 @@
+{
+  "name": "docker-express",
+  "version": "1.0.0",
+  "description": "docker-express-container",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omar-Gonzalez/docker-express.git"
+  },
+  "keywords": [
+    "docker",
+    "express",
+    "node"
+  ],
+  "author": "Omar Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Omar-Gonzalez/docker-express/issues"
+  },
+  "homepage": "https://github.com/Omar-Gonzalez/docker-express#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "connect-mongo": "^3.0.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.2",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.6.10",
+    "morgan": "^1.9.1",
+    "parseurl": "^1.3.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "node-sass-middleware": "^0.11.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
