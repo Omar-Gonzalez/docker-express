@@ -115,7 +115,7 @@ class RegisterComponent extends Component {
             </div>
             {this.renderSubmitBtn()}
             {this.renderAlert()}
-            <small className="form-text text-muted mt-2">Do you already have an account? <a href="/register">login
+            <small className="form-text text-muted mt-2">Do you already have an account? <a href="/login">login
               here
               &raquo;</a>
             </small>
