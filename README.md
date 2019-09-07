@@ -14,9 +14,11 @@ Kudos to parcel bundler for making possible a hassle-free react set up
 
 * Just set up your .env file following env-example 
 * Then docker-compose up 
+* Check docker-compose and env variables everything is pretty much self-explanatory
+* You can enter mongo-ex at localhost:8081 
 * Nodemon is available for dev & Forever can be run in prod 
 * If you need more react components follow the login & register example, and add the corresponting package.json scripts
-* rb.sh can be used to build all react components at once
+* I mostly work on Windows so I added rb.ps1 to build all react components at once, but you can use rb.sh for posix systems
 
 ## License
 
