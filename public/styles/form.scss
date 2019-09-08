@@ -1,0 +1,25 @@
+div.container {
+  div.row {
+    form {
+      textarea {
+        background-color: $dark;
+        color: $light;
+
+        &:focus {
+          background-color: $dark;
+          color: $light;
+        }
+      }
+
+      input {
+        background-color: $dark;
+        color: $light;
+
+        &:focus {
+          background-color: $dark;
+          color: $light;
+        }
+      }
+    }
+  }
+}

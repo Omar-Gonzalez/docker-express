@@ -13,7 +13,7 @@ router.get('/login', async (req, res) => {
   if (req.user) {
     res.redirect('/profile')
   } else {
-    res.render('login', {
+    res.render('user/login', {
       appName: process.env.APP_NAME
     })
   }
@@ -62,7 +62,7 @@ router.get('/register', async (req, res) => {
   if (req.user) {
     res.redirect('/profile');
   } else {
-    res.render('register', {
+    res.render('user/register', {
       appName: process.env.APP_NAME
     })
   }
@@ -107,7 +107,7 @@ router.post('/xhr/user', [
 
 router.get('/profile', async (req, res) => {
   if (req.user) {
-    res.render('profile', {
+    res.render('user/profile', {
       user: req.user
     })
   } else {
