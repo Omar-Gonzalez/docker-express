@@ -13,7 +13,8 @@ Kudos to parcel-bundler for making possible a hassle-free react set up
 ## Usage
 
 * Just set up your .env file following env-example
-* Then docker-compose up
+* docker-compose up
+* Then docker-compose exec app npm install to avoid os specific binaries mix up
 * Check docker-compose and env variables everything is pretty much self-explanatory
 * You can enter mongo-ex at localhost:8081
 * Nodemon is available for dev & Forever can be run in prod
