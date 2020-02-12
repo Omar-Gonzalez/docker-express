@@ -1,3 +1,28 @@
 <% include ../includes/head.ejs %>
-<% include ../react/dist/login.component.html %>
+<% include ../includes/navbar.ejs %>
+<% include ../includes/flash-messages.ejs %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mt-3 text-white">
+            <p class="text-white">Login Into Your Account</p>
+            <form method="post">
+                <div class="form-group">
+                    <label class="text-white" for="emailInput" required>Email address</label>
+                    <input name="email" type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label class="text-white" for="pwdInput">Password</label>
+                    <input name="password" type="password" class="form-control" id=pwdInput" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <hr>
+                <small className="form-text text-muted mt-2">don't have an account yet? <a href="/register">register
+                        here &raquo;</a>
+                </small>
+            </form>
+        </div>
+    </div>
+</div>
+
 <% include ../includes/footer.ejs %>

@@ -4,6 +4,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser')
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
+const flash = require('connect-flash');
 const errorhandler = require('errorhandler');
 const morgan = require('morgan');
 const fs = require('fs');
@@ -26,6 +27,7 @@ const db = mongoose.connection;
  * Configure app middleware
  */
 const app = express();
+app.use(flash());
 app.set('view engine', 'ejs');
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
@@ -38,7 +40,10 @@ app.use('/styles', express.static('public/css-dist/styles'));
 app.use('/bootstrap-js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/', express.static(__dirname + '/views/react/dist'));
+app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 if (process.env.NODE_ENV === 'development') {
   app.use(errorhandler());
@@ -95,6 +100,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /**
+ * Global Values Middleware
+ */
+app.use(function (req, res, next) {
+  res.locals.infos = [];
+  res.locals.errors = [];
+  res.locals.appName = process.env.APP_NAME;
+  res.locals.author = 'Omar Gonzalez';
+  res.locals.user = req.user
+  next()
+});
+/**
  * define app routes
  */
 const userEndpoints = require('./routes/user-routes');
@@ -102,12 +118,7 @@ const userEndpoints = require('./routes/user-routes');
 app.use('/', userEndpoints);
 
 app.get('/', async (req, res) => {
-  res.render('home', {
-    appName: process.env.APP_NAME,
-    author: 'Omar Gonzalez',
-    year: new Date().getFullYear(),
-    user: req.user,
-  });
+  res.render('home');
 });
 
 /**
