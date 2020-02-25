@@ -1,33 +1,6 @@
 version: '3'
 
 services:
-  mongoex:
-    image: mongo-express
-    restart: always
-    environment:
-      - ME_CONFIG_OPTIONS_EDITORTHEME=dracula
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_PORT=${MONGO_PORT}
-      - ME_CONFIG_MONGODB_ENABLE_ADMIN=${MONGOEX_ADMIN_ENABLED}
-      - ME_CONFIG_BASICAUTH_USERNAME=${MONGO_ROOT_USER}
-      - ME_CONFIG_BASICAUTH_PASSWORD=${MONGO_ROOT_PASSWORD}
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ROOT_USER}
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ROOT_PASSWORD}
-    ports:
-      - ${MONGOEX_PORT}:${MONGOEX_PORT}
-    links:
-      - mongodb
-  mongodb:
-    image: mongo:latest
-    restart: always
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-      - MONGO_INITDB_DATABASE=${DB_NAME}
-    volumes:
-      - database:/data/db
-    ports:
-      - ${MONGO_PORT}:${MONGO_PORT}
   app:
     restart: always
     env_file: .env
@@ -41,8 +14,6 @@ services:
       - NODE_ENV=$NODE_ENV
       - PORT=$PORT
       - HOST=$HOST
-    depends_on:
-      - mongodb
   nginx:
     image: nginx:latest
     volumes:
