@@ -18,7 +18,7 @@ const UserModel = require('./models/user-model');
  * Moongose connection
  * @type connection{string}
  */
-const connection = `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@mongodb/${process.env.DB_NAME}?authSource=admin`;
+const connection = `${process.env.MONGO_CONNECTION}`;
 mongoose.connect(connection, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
