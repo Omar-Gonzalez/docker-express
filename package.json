@@ -33,7 +33,7 @@
     "express-session": "^1.16.2",
     "express-validator": "^6.1.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",
